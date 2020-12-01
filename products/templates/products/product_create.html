@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- <form method='POST'> {% csrf_token %}  -->
+<form action='.' method='POST'> {% csrf_token %} 
+
+<!-- <form action='http://www.google.com/search' method='GET'>  perform a google search based on the input-->
+  <!-- <input type='text' name='q' placeholder="Your search" /> -->
+  <!-- <input type='submit' value='Save' /> -->
+
+<!-- <form action='/search' method='GET'> action can send you to another url  -->
+<!-- <form method='GET'> GET is default method for a form   -->
+  <!-- {{ form.as_p }} -->
+
+  {{ form.as_p }}
+
+  <!-- <input type='text' name='title' placeholder="Your title" /> -->
+  <input type='submit' value='Save' />
+</form>
+{% endblock %}

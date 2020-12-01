@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>About</h1>
+  
+  <!-- <h3>{{ title|capfirst }}</h3> -->
+  <!-- more tags at the same time is possible -->
+  <h3>{{ title|capfirst|title }}</h3>
+  <p>This is a template</p>
+
+  <!-- convert the string to actual html formate  -->
+  {{ my_html|safe }}
+  {{ my_html|striptags|slugify}}
+
+  <p>
+    {{ my_text }}, {{ my_number }}, {{ my_list }}
+  </p>
+
+  <ul>
+    {% for abc in my_list %}
+      {% if abc == 345 %}
+        <li>{{ forloop.counter }} - {{ abc|add:22 }}</li>    
+      {% elif abc == 234 %}
+        <li>NO NO</li>    
+      {% else %}
+        <li>{{ forloop.counter }} - {{ abc }}</li>    
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+{% endblock %}
